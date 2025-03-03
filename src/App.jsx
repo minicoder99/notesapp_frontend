@@ -12,7 +12,7 @@ const App = () => {
 
   const fetchNotes = async () => {
     try {
-      const response = await axios.get('/api/');
+      const response = await axios.get('/');
       setNotes(response.data);
     } catch (error) {
       console.error('Error fetching notes:', error);
@@ -22,7 +22,7 @@ const App = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`/api/search?keyword=${encodeURIComponent(keyword)}`);
+      const response = await axios.get(`/search?keyword=${encodeURIComponent(keyword)}`);
       setSearchResults(response.data);
     } catch (error) {
       console.error('Error searching notes:', error);

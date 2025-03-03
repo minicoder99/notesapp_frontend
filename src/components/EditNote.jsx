@@ -9,7 +9,7 @@ const EditNote = ({ noteId, onNoteUpdated }) => {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const response = await axios.get(`/api/${noteId}`);
+        const response = await axios.get(`/${noteId}`);
         const { title, content, category } = response.data;
         setTitle(title);
         setContent(content);
@@ -26,7 +26,7 @@ const EditNote = ({ noteId, onNoteUpdated }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`/api/${noteId}`, { title, content, category });
+      await axios.put(`/${noteId}`, { title, content, category });
       console.log('Note updated');
       onNoteUpdated();
     } catch (error) {
