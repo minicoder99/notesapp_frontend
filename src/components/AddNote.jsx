@@ -9,7 +9,7 @@ const AddNote = ({ onNoteAdded }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/notes', { title, content });
+      const response = await axios.post('/', { title, content });
       console.log('Note added:', response.data);
       onNoteAdded();
       setTitle('');

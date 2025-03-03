@@ -9,7 +9,7 @@ const EditNote = ({ noteId, onNoteUpdated }) => {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const response = await axios.get(`/api/notes/${noteId}`);
+        const response = await axios.get(`/${noteId}`);
         const { title, content, category } = response.data;
         setTitle(title);
         setContent(content);
