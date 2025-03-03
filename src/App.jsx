@@ -13,6 +13,7 @@ const App = () => {
   const fetchNotes = async () => {
     try {
       const response = await axios.get('/');
+      console.log('fetching notes:', response.data);
       setNotes(response.data);
     } catch (error) {
       console.error('Error fetching notes:', error);
